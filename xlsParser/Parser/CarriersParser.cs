@@ -60,7 +60,7 @@ namespace xlsParser.Parser
             if (parking != null)
             {
                 foreach (var u in context.Users.Include(x => x.Parking).Where(x => x.ParkingId == parking.Id))
-                    user.CarrierId = null;
+                    user.Parking = null;
                 context.SaveChanges();
                 context.Parkings.Remove(parking);
                 context.SaveChanges();
